@@ -19,8 +19,17 @@ app.use(
 )
 app.use(express.json())
 
-
+//Chama a página contato
 app.get('/contato', (req, res) => {
+  res.render('contato')
+})
+
+//Recebe os dados de contato
+app.post('/contato', (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  console.log(name, email)
+
   res.render('contato')
 })
 
